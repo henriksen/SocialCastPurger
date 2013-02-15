@@ -15,9 +15,21 @@ namespace SocialCastPurge.Purger
 
         public static string ScPassword { get; set; }
 
+        public static string ScDomain { get; set; }
+
+        public static string AdServer { get; set; }
+
         public static void ReadCredentials()
         {
-            
+            AdServer = Settings.Default.adServer;
+            if (AdServer == "")
+            {
+                Console.WriteLine("AD server:");
+                AdServer = Console.ReadLine();
+                Settings.Default.adServer = AdServer;
+                Settings.Default.Save();
+            }
+
             AdUsername = Settings.Default.adUsername;
             AdPassword = "";
             if (AdUsername == "")
@@ -30,6 +42,15 @@ namespace SocialCastPurge.Purger
             Console.WriteLine("AD password:");
             AdPassword = ReadPassword();
             Console.WriteLine();
+
+            ScDomain = Settings.Default.scDomain;
+            if (ScDomain == "")
+            {
+                Console.WriteLine("SocialCast domain:");
+                ScDomain = Console.ReadLine();
+                Settings.Default.scDomain = ScDomain;
+                Settings.Default.Save();
+            }
 
             ScUsername = Settings.Default.scUsername;
             ScPassword = "";
@@ -45,6 +66,8 @@ namespace SocialCastPurge.Purger
             Console.WriteLine();
 
         }
+
+
 
         static String SecureStringToString(SecureString value)
         {

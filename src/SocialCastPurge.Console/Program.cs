@@ -17,7 +17,7 @@ namespace SocialCastPurge.Purger
 
             var auth = new SocialCastAuthDetails()
             {
-                DomainName = "ergogroup-no",
+                DomainName = Credentials.ScDomain,
                 Username = Credentials.ScUsername,
                 Password = Credentials.ScPassword
             };
@@ -82,7 +82,7 @@ namespace SocialCastPurge.Purger
 
         static void InitAD()
         {
-            const string ldapAddress = "LDAP://ccddc001.corp.corpcommon.com";
+            string ldapAddress = "LDAP://" + Credentials.AdServer;
             _de = new DirectoryEntry(ldapAddress, Credentials.AdUsername, Credentials.AdPassword);
             _ds = new DirectorySearcher(_de) {SearchScope = SearchScope.Subtree};
         }

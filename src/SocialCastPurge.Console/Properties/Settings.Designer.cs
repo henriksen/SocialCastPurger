@@ -70,5 +70,29 @@ namespace SocialCastPurge.Purger.Properties {
                 this["scPassword"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string adServer {
+            get {
+                return ((string)(this["adServer"]));
+            }
+            set {
+                this["adServer"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string scDomain {
+            get {
+                return ((string)(this["scDomain"]));
+            }
+            set {
+                this["scDomain"] = value;
+            }
+        }
     }
 }
