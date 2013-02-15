@@ -46,7 +46,7 @@ namespace SocialCastPurge.Purger
             ScDomain = Settings.Default.scDomain;
             if (ScDomain == "")
             {
-                Console.WriteLine("SocialCast domain:");
+                Console.WriteLine("SocialCast domain (without http:// and without .socialcast.com):");
                 ScDomain = Console.ReadLine();
                 Settings.Default.scDomain = ScDomain;
                 Settings.Default.Save();
